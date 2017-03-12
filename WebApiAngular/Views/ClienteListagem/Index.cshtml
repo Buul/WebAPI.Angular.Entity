@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listagem de Clientes</h2>
+
+<div data-ng-controller="clienteController">
+    <div class="panel panel-default">
+        <div class="panel-heading">Lista de clientes</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>{{erro}}</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <td>ID</td>
+                                <td>Nome</td>
+                                <td>Email</td>
+                                <td>Idade</td>
+                                <td>Data nascimento</td>
+                                <td>Data cadastro</td>
+                            </tr>
+                            <tr data-ng-repeat="cliente in listaclientes">
+                                <td>{{ cliente.id_cliente }}</td>
+                                <td>{{ cliente.name }}</td>
+                                <td>{{ cliente.email }}</td>
+                                <td>{{ cliente.idade }}</td>
+                                <td>{{ cliente.data_nascimento }}</td>
+                                <td>{{ cliente.data_cadastro }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
